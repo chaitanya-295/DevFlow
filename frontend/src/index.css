@@ -1,0 +1,521 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg-primary: #0b0f19;
+  --bg-header: #090D16;
+  --bg-sidebar: #0B0F17;
+  --bg-card: #0F172A;
+  --bg-card-sub: #141E33;
+  --border-color: #1E293B;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+}
+
+html.light {
+  color-scheme: light;
+  --bg-primary: #f1f5f9;
+  --bg-header: #ffffff;
+  --bg-sidebar: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-sub: #f8fafc;
+  --border-color: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+}
+
+/* Light Theme Component & Utility Overrides */
+html.light body {
+  background-color: #f1f5f9 !important;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.06) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.06) 0px, transparent 50%) !important;
+  color: #0f172a !important;
+}
+
+html.light header,
+html.light .bg-\[\#090D16\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light aside,
+html.light .bg-\[\#0B0F17\],
+html.light .bg-\[\#091124\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light main,
+html.light .bg-\[\#0B0F19\],
+html.light .bg-\[\#080C15\] {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+html.light .bg-\[\#0F172A\],
+html.light .bg-\[\#111827\],
+html.light .bg-\[\#141E33\],
+html.light .bg-\[\#131926\],
+html.light .bg-\[\#111724\],
+html.light .bg-\[\#141B2D\],
+html.light .bg-\[\#121724\],
+html.light .bg-\[\#0E131F\],
+html.light .bg-\[\#0A0D14\],
+html.light .bg-\[\#101625\],
+html.light .bg-\[\#151D2F\],
+html.light .glass-panel,
+html.light .glass-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .border-\[\#1A2234\],
+html.light .border-\[\#1C2537\],
+html.light .border-\[\#1E2638\],
+html.light .border-\[\#1E293B\],
+html.light .border-\[\#1F2937\],
+html.light .border-\[\#222D42\],
+html.light .border-\[\#232D42\],
+html.light .border-slate-800,
+html.light .border-slate-700 {
+  border-color: #e2e8f0 !important;
+}
+
+/* 4 Metric Cards in Light Mode: Soft pastel tint backgrounds matching Jira Clone screenshot */
+html.light .bg-\[\#172554\] {
+  background-color: #EFF6FF !important;
+  border-color: #BFDBFE !important;
+}
+html.light .bg-\[\#172554\] .text-blue-200,
+html.light .bg-\[\#172554\] span {
+  color: #1E40AF !important;
+}
+html.light .bg-\[\#172554\] .text-white {
+  color: #1E3A8A !important;
+}
+html.light .bg-\[\#172554\] p,
+html.light .bg-\[\#172554\] .text-blue-300 {
+  color: #3B82F6 !important;
+}
+html.light .bg-\[\#172554\] svg {
+  color: #3B82F6 !important;
+}
+
+/* Card 2: Active Projects (Soft Green) */
+html.light .bg-\[\#064E3B\] {
+  background-color: #F0FDF4 !important;
+  border-color: #BBF7D0 !important;
+}
+html.light .bg-\[\#064E3B\] .text-emerald-200,
+html.light .bg-\[\#064E3B\] span {
+  color: #166534 !important;
+}
+html.light .bg-\[\#064E3B\] .text-white {
+  color: #14532D !important;
+}
+html.light .bg-\[\#064E3B\] p,
+html.light .bg-\[\#064E3B\] .text-emerald-300 {
+  color: #16A34A !important;
+}
+html.light .bg-\[\#064E3B\] svg {
+  color: #16A34A !important;
+}
+
+/* Card 3: Team Velocity / Story Points (Soft Purple) */
+html.light .bg-\[\#3B0764\] {
+  background-color: #FAF5FF !important;
+  border-color: #E9D5FF !important;
+}
+html.light .bg-\[\#3B0764\] .text-purple-200,
+html.light .bg-\[\#3B0764\] span {
+  color: #6B21A8 !important;
+}
+html.light .bg-\[\#3B0764\] .text-white {
+  color: #581C87 !important;
+}
+html.light .bg-\[\#3B0764\] p,
+html.light .bg-\[\#3B0764\] .text-purple-300 {
+  color: #9333EA !important;
+}
+html.light .bg-\[\#3B0764\] svg {
+  color: #9333EA !important;
+}
+
+/* Card 4: Completion Rate (Soft Amber/Orange) */
+html.light .bg-\[\#451A03\] {
+  background-color: #FFFBEB !important;
+  border-color: #FDE68A !important;
+}
+html.light .bg-\[\#451A03\] .text-amber-200,
+html.light .bg-\[\#451A03\] span {
+  color: #92400E !important;
+}
+html.light .bg-\[\#451A03\] .text-white {
+  color: #78350F !important;
+}
+html.light .bg-\[\#451A03\] p,
+html.light .bg-\[\#451A03\] .text-amber-300 {
+  color: #D97706 !important;
+}
+html.light .bg-\[\#451A03\] svg {
+  color: #D97706 !important;
+}
+
+/* Jira Dashboard Lower Section in Light Mode */
+/* 1. Critical Deadline Badge in Light Mode */
+html.light .bg-\[\#7F1D1D\]\/50 {
+  background-color: #FEE2E2 !important;
+  border-color: #FECACA !important;
+  color: #DC2626 !important;
+}
+
+/* 2. Upcoming Deadline item row & calendar icon */
+html.light .bg-\[\#141E33\] {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+}
+html.light .bg-\[\#141E33\] .bg-slate-800\/80 {
+  background-color: #EFF6FF !important;
+  color: #2563EB !important;
+}
+html.light .bg-\[\#141E33\] .text-slate-200 {
+  color: #0F172A !important;
+}
+html.light .bg-\[\#141E33\] .text-slate-400 {
+  color: #64748B !important;
+}
+
+/* 3. Progress Bar Track & Count Pill in List View */
+html.light .bg-\[\#0F172A\] .bg-\[\#1E293B\] {
+  background-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+html.light .bg-\[\#0F172A\] .bg-slate-800\/80 {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+html.light .bg-\[\#0F172A\] .text-slate-300 {
+  color: #475569 !important;
+}
+
+/* 4. Chart/List toggle container */
+html.light .bg-\[\#141E33\].border-slate-800,
+html.light .bg-\[\#111724\].border-\[\#1E293B\] {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* 5. Projects Page Light Mode Styling */
+/* Status Pills (Active, Planning, Archived) */
+html.light .bg-emerald-900\/40 {
+  background-color: #DCFCE7 !important;
+  border-color: #BBF7D0 !important;
+  color: #15803D !important;
+}
+
+html.light .bg-blue-900\/40 {
+  background-color: #DBEAFE !important;
+  border-color: #BFDBFE !important;
+  color: #1D4ED8 !important;
+}
+
+html.light .bg-slate-800 {
+  background-color: #F1F5F9 !important;
+  color: #475569 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Tag Pill (dev, marketing, etc.) */
+html.light .bg-\[\#111726\] {
+  background-color: #EFF6FF !important;
+  border-color: #DBEAFE !important;
+  color: #1E40AF !important;
+}
+
+/* Progress bar track */
+html.light .bg-\[\#0F172A\] .h-1\.5.bg-slate-800 {
+  background-color: #E2E8F0 !important;
+}
+html.light .bg-\[\#0F172A\] .h-full.bg-slate-500 {
+  background-color: #3B82F6 !important;
+}
+
+/* Project Card hover & border */
+html.light .bg-\[\#0F172A\]:hover {
+  border-color: #CBD5E1 !important;
+}
+
+/* Welcome Hero Banner in Light Mode */
+html.light .welcome-hero-banner.bg-gradient-to-r,
+html.light .profile-hero-banner.bg-gradient-to-r {
+  background: linear-gradient(to right, #4338CA, #4F46E5, #6366F1) !important;
+}
+html.light .welcome-hero-banner.bg-gradient-to-r h1,
+html.light .profile-hero-banner.bg-gradient-to-r h1 {
+  color: #ffffff !important;
+}
+html.light .welcome-hero-banner.bg-gradient-to-r p,
+html.light .profile-hero-banner.bg-gradient-to-r p {
+  color: #E0E7FF !important;
+}
+html.light .welcome-hero-banner.bg-gradient-to-r button,
+html.light .profile-hero-banner.bg-gradient-to-r button {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light .welcome-hero-banner.bg-gradient-to-r button *,
+html.light .profile-hero-banner.bg-gradient-to-r button * {
+  color: #0f172a !important;
+}
+
+/* Profile Page Segmented Control and Activity in Light Mode */
+html.light .profile-tabs-track {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+html.light .profile-tab-active {
+  background-color: #FFFFFF !important;
+  color: #2563EB !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+html.light .profile-tab-inactive {
+  color: #64748B !important;
+}
+html.light .profile-tab-inactive:hover {
+  color: #0F172A !important;
+  background-color: rgba(226, 232, 240, 0.6) !important;
+}
+
+/* Landing Page light mode readability & polish adjustments */
+html.light section h1.text-white,
+html.light section h2.text-white,
+html.light section h3.text-white {
+  color: #0f172a !important;
+}
+html.light section p.text-slate-300,
+html.light section p.text-slate-400 {
+  color: #475569 !important;
+}
+
+/* Landing Page Hero Showcase & Kanban preview */
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900,
+html.light .bg-slate-950\/60 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+/* Tech Stack Matrix section in Light Mode */
+html.light section.bg-slate-900\/40 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+html.light section.bg-slate-900\/40 h4 {
+  color: #0f172a !important;
+}
+html.light section.bg-slate-900\/40 p {
+  color: #64748b !important;
+}
+
+/* Secondary demo buttons in Light Mode */
+html.light .bg-slate-800,
+html.light .bg-slate-800\/60 {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+html.light .bg-slate-800:hover,
+html.light .bg-slate-800\/60:hover {
+  background-color: #e2e8f0 !important;
+  color: #090d16 !important;
+}
+
+/* Showcase dashboard card container */
+html.light section .bg-\[\#0F172A\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08) !important;
+}
+html.light section .border-slate-800,
+html.light section .border-slate-800\/80 {
+  border-color: #e2e8f0 !important;
+}
+
+
+/* General dark-surface text inversion in light mode, except on colored hero/metric badges */
+html.light :not(.bg-gradient-to-r):not(.bg-\[\#172554\]):not(.bg-\[\#064E3B\]):not(.bg-\[\#3B0764\]):not(.bg-\[\#451A03\]):not(.bg-blue-600):not(.bg-indigo-600):not(.bg-purple-600):not(.bg-rose-500) > .text-white,
+html.light :not(.bg-gradient-to-r):not(.bg-\[\#172554\]):not(.bg-\[\#064E3B\]):not(.bg-\[\#3B0764\]):not(.bg-\[\#451A03\]) > .text-slate-100,
+html.light :not(.bg-gradient-to-r):not(.bg-\[\#172554\]):not(.bg-\[\#064E3B\]):not(.bg-\[\#3B0764\]):not(.bg-\[\#451A03\]) > .text-slate-200 {
+  color: #0f172a;
+}
+
+html.light :not(.bg-gradient-to-r):not(.bg-\[\#172554\]):not(.bg-\[\#064E3B\]):not(.bg-\[\#3B0764\]):not(.bg-\[\#451A03\]) > .text-slate-300,
+html.light :not(.bg-gradient-to-r):not(.bg-\[\#172554\]):not(.bg-\[\#064E3B\]):not(.bg-\[\#3B0764\]):not(.bg-\[\#451A03\]) > .text-slate-400 {
+  color: #64748b;
+}
+
+html.light .bg-blue-600,
+html.light .bg-blue-600 * {
+  color: #ffffff !important;
+}
+
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html.dark select option,
+select option {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.light .hover\:bg-\[\#151D2C\]:hover,
+html.light .hover\:bg-\[\#151D2D\]:hover,
+html.light .hover\:bg-\[\#1E293B\]:hover,
+html.light .hover\:bg-\[\#12192A\]:hover,
+html.light .hover\:bg-slate-800:hover,
+html.light .hover\:bg-slate-800\/60:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light .hover\:bg-slate-800:hover svg,
+html.light .hover\:bg-slate-800\/60:hover svg,
+html.light .hover\:text-white:hover svg {
+  color: #0f172a !important;
+}
+
+html.light .divide-\[\#161E30\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #f1f5f9 !important;
+}
+
+html.light aside .bg-\[\#18325C\] {
+  background-color: #eff6ff !important;
+  color: #2563eb !important;
+}
+
+html.light aside .text-slate-300 {
+  color: #475569 !important;
+}
+
+html.light aside .bg-\[\#091124\] {
+  background-color: #EFF6FF !important;
+  border-color: #DBEAFE !important;
+}
+
+html.light aside .bg-\[\#091124\] .text-slate-100 {
+  color: #1E40AF !important;
+}
+
+html.light aside .bg-\[\#091124\] .text-slate-400 {
+  color: #3B82F6 !important;
+}
+
+html.light aside .bg-\[\#091124\] .text-slate-200 {
+  color: #1E3A8A !important;
+}
+
+html.light aside .bg-\[\#091124\] .bg-\[\#1E293B\] {
+  background-color: #DBEAFE !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #0b0f19;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s ease-in-out;
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.2);
+}
+
+.glow-gradient {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+}
+
+.glow-text {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+

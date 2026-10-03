@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: devflow-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: devflow_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - devflow-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: devflow-backend
+    restart: always
+    environment:
+      SPRING_DATA_MONGODB_URI: ${SPRING_DATA_MONGODB_URI:-mongodb+srv://chaitanyakamble2005_db_user:3VIB2R7YKj8uSWIH@cluster0.ftdwflt.mongodb.net/devflow_db?retryWrites=true&w=majority&appName=Cluster0}
+      APP_JWT_SECRET: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      APP_JWT_EXPIRATION_MS: 86400000
+      APP_SEED_ENABLED: "false"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+    networks:
+      - devflow-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: devflow-frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - devflow-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  devflow-network:
+    driver: bridge
